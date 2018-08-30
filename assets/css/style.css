@@ -2,11 +2,15 @@
 .character-body{
   color:white;
 }
-i{
+#reball{
   color:yellow;
 }
+
 p{
   color:white;
+}
+#popup{
+  color:black;
 }
 .card:hover{
   border: 3px solid green;
@@ -21,6 +25,35 @@ html, body {
 img{
   height:60%;
 }
+#porg{
+  color:orange;
+}
+.flaticon-heart-shape-love{
+  color:red;
+}
 .row{
   margin-left: 1%;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin-top:20%;
+  padding: 10px;
+  width: 20%;
+  margin-left:35%;
+}
+
+/* The Close Button */
+.close {
+  color:black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -57,7 +57,7 @@ $(document).ready(function () {
             var others = $(".characters").children().not('.attacker');
             $(".enermy").append(others)
     
-            // $("figure").not(".player").css("border-color", "red");
+           
           } else if ($(this).parent().hasClass("enermy")) {
             myDefender = $(this)
             myArrayDefender = Characters[myDefender.attr("id")]
@@ -65,7 +65,7 @@ $(document).ready(function () {
               $(".defender").append($(this))
             }
             others = $(".enermy").children()
-            // $("figure").not(".player").css("border-color", "red");
+           
           }
         })
       }
@@ -79,14 +79,23 @@ $(document).ready(function () {
             currentAttackHealth = currentAttackHealth - myArrayDefender.counterp
             myAttacker.find("figcaption").find("p").html(currentAttackHealth)
             myDefender.find("figcaption").find("p").html(currentDefenderHealth)
-            if (currentDefenderHealth<=0){
+            if (currentDefenderHealth<0){
                 alert("your defender died!");
                 $(".defender").empty()
-                myArrayAttacker.attackp +=15;
+                myArrayAttacker.attackp +=15;}
+            //When win
             if ($(".enermy").children().length ==0 && $(".defender").children().length ==0){
-                alert("You have defeated all your enermy!")
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName("close")[0];
+                modal.style.display="block";
+                span.onclick=function(){
+                    modal.style.display="none";
+                }
+            window.onclick=function(event){
+                if(event.target == modal){
+                    modal.style.display = "none";
+                }
             }
-
             }
         })
     }

@@ -19,7 +19,7 @@
 <body>
 
     <div class="header col-lg-12 text-center">
-        <p><span><i class="swg swg-reball swg-3x"></i></span>StarWars RPG!</p>
+        <p><span><i id="reball" class="swg swg-reball swg-5x"></i></span>StarWars RPG!</p>
     </div>
     <div id="musicControls">
         <button class="btn btn-success btn-xxs theme-button">
@@ -64,14 +64,25 @@
     <p id=enermyhl>Available to fight</p>
     <div class="row enermy">
     </div>
-
-    <p>Defender</p>
-    <div class="defender">
-    </div>
     <div class="fightsection">
         <button class="button buttonA bg-danger">Attack</button>
         <button class="button buttonR">Play again</button>
     </div>
+
+    <p>Defender</p>
+    <div class="defender">
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <i id="porg" class="swg swg-porg-3 swg-5x"></i>
+          <p id="popup">You have defeated all your enermies!</p>
+        </div>
+      
+      </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

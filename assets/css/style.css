@@ -1,0 +1,26 @@
+
+.character-body{
+  color:white;
+}
+i{
+  color:yellow;
+}
+p{
+  color:white;
+}
+.card:hover{
+  border: 3px solid green;
+}
+html, body {
+  background: url(../images/starfield.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  color: #fff;
+  
+}
+img{
+  height:60%;
+}
+.row{
+  margin-left: 1%;
+}

@@ -1,86 +1,88 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>StarWars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="game.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="my-icons-collection/font/flaticon.css">
+    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/starwars-glyphicons/css/starwars-glyphicons.css">
 
-
-    
+    <link rel="stylesheet" type="text/css" href="./assets/images/my-icons-collection/font/flaticon.css">
 </head>
+
 <body>
-    <h1> Star Wars RPG!</h1>
 
-    <h3> Select a character</h3>
-    <div class="row buttons">
-        
-            <div class="column">
-            <figure id="obiwan">
-                <img src="./assets/images/obiwan.jpg" alt="Snow" style="width:150px">
-                <figcaption>Obiwan
-                        <i  class="flaticon-heart-shape-love">
-                                </i>
-
-                        <p id="health ohealth">100</p>
-                </figcaption>
-            </figure>
-            </div>
-            <div class="column">
-            <figure id="rey">
-                <img src="./assets/images/ray.jpg" alt="Forest" style="width:150px">
-                <figcaption>Rey
-                    <i  class="flaticon-heart-shape-love">
-                    </i>
-                    <p id="health rhealth">100</p>
-                </figcaption>
-            </figure>
-            </div>
-            <div class="column">
-            <figure id="yoda">
-                <img src="./assets/images/masteryoda.jpg" alt="Mountains" style="width:150px">
-                <figcaption>Master Yoda
-                    <i  class="flaticon-heart-shape-love">
-                    </i>
-                    <p id="health yhealth">100</p>
-                </figcaption>
-            </figure>
-            </div>
-            <div class="column">
-                    <figure id="ben">
-                    <img src="./assets/images/ben.jpg" alt="Mountains" style="width:150px">
-                    <figcaption>Ben Solo
-                        <i  class="flaticon-heart-shape-love">
-                        </i>
-                        <p id="health">100</p>
-                    </figcaption>
-                </figure>
-            </div>
+    <div class="header col-lg-12 text-center">
+        <p><span><i class="swg swg-reball swg-3x"></i></span>StarWars RPG!</p>
+    </div>
+    <div id="musicControls">
+        <button class="btn btn-success btn-xxs theme-button">
+            Play theme</button>
+        <button class="btn btn-dark btn-xxs pause-button">
+            <span class="fa fa-pause"></span> Pause</button>
     </div>
 
-        <p id=enermyhl>Available to fight</p>
+    <h4>Select a character to fight</h4>
+    <div class="row buttons characters">
+
+        <figure id="character1" class="card bg-transparent mx-2">
+            <img src="./assets/images/obiwan.jpg" style="width:180px">
+            <figcaption class="character-body">Obiwan
+                <i class="flaticon-heart-shape-love">
+                </i>
+                <p id="healthp">150</p>
+            </figcaption>
+
+        </figure>
+        <figure id="character2" class="card bg-transparent mx-2">
+            <img src="./assets/images/rey.jpeg" style="width:180px">
+            <figcaption class="character-body">Rey <i class="flaticon-heart-shape-love"></i>
+                <p id="healthp">150</p>
+            </figcaption>
+        </figure>
+        <figure id="character3" class="card bg-transparent mx-2">
+            <img src="./assets/images/masteryoda.jpg" style="width:180px">
+            <figcaption class="character-body">Yoda<i class="flaticon-heart-shape-love"></i>
+                <p id="healthp">150</p>
+            </figcaption>
+
+        </figure>
+        <figure id="character4" class="card bg-transparent mx-2">
+            <img src="./assets/images/darth-vader.jpg" style="width:180px">
+            <figcaption class="character-body">Darth Vader<i class="flaticon-heart-shape-love"></i>
+                <p id="healthp">150</p>
+            </figcaption>
+        </figure>
+
+    </div>
+    <p id=enermyhl>Available to fight</p>
     <div class="row enermy">
-        
     </div>
+
     <p>Defender</p>
-    <div id= defender-container>
-
+    <div class="defender">
     </div>
-
     <div class="fightsection">
-        <button class="button buttonA">Attack</button>
+        <button class="button buttonA bg-danger">Attack</button>
         <button class="button buttonR">Play again</button>
     </div>
-    
-    
-    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script src="./assets/javascript/game.js"></script>
 </body>
+
 </html>

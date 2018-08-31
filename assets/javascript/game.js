@@ -53,7 +53,7 @@ $(document).ready(function () {
             $(this).addClass("attacker")
             myAttacker = $(this)
             myArrayAttacker = Characters[myAttacker.attr("id")]
-            $("h4").text("Your character is " + Characters[$(this).attr("id")].name)
+            $(".mt-5").text("Your character is " + Characters[$(this).attr("id")].name)
             var others = $(".characters").children().not('.attacker');
             $(".enermy").append(others)
     

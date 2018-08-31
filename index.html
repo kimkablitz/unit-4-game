@@ -12,7 +12,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/starwars-glyphicons/css/starwars-glyphicons.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/images/my-icons-collection/font/flaticon.css">
 </head>
 
@@ -28,48 +28,48 @@
             <span class="fa fa-pause"></span> Pause</button>
     </div>
 
-    <h4>Select a character to fight</h4>
+    <h2 class= mt-5>Select a character to fight</h2>
     <div class="row buttons characters">
 
-        <figure id="character1" class="card bg-transparent mx-2">
+        <figure id="character1" class="col card bg-transparent mx-2">
             <img src="./assets/images/obiwan.jpg" style="width:180px">
             <figcaption class="character-body">Obiwan
                 <i class="flaticon-heart-shape-love">
                 </i>
-                <p id="healthp">150</p>
+                <p id="healthp">170</p>
             </figcaption>
 
         </figure>
-        <figure id="character2" class="card bg-transparent mx-2">
+        <figure id="character2" class="col card bg-transparent mx-2">
             <img src="./assets/images/rey.jpeg" style="width:180px">
             <figcaption class="character-body">Rey <i class="flaticon-heart-shape-love"></i>
-                <p id="healthp">150</p>
+                <p id="healthp">130</p>
             </figcaption>
         </figure>
-        <figure id="character3" class="card bg-transparent mx-2">
+        <figure id="character3" class="col card bg-transparent mx-2">
             <img src="./assets/images/masteryoda.jpg" style="width:180px">
             <figcaption class="character-body">Yoda<i class="flaticon-heart-shape-love"></i>
-                <p id="healthp">150</p>
+                <p id="healthp">185</p>
             </figcaption>
 
         </figure>
-        <figure id="character4" class="card bg-transparent mx-2">
+        <figure id="character4" class="col card bg-transparent mx-2">
             <img src="./assets/images/darth-vader.jpg" style="width:180px">
             <figcaption class="character-body">Darth Vader<i class="flaticon-heart-shape-love"></i>
-                <p id="healthp">150</p>
+                <p id="healthp">200</p>
             </figcaption>
         </figure>
 
     </div>
-    <p id=enermyhl>Available to fight</p>
+    <h2>Available to fight</h2>
     <div class="row enermy">
     </div>
-    <div class="fightsection">
+    <div class="col fightsection">
         <button class="button buttonA bg-danger">Attack</button>
         <button class="button buttonR">Play again</button>
     </div>
 
-    <p>Defender</p>
+    <h2>Defender</h2>
     <div class="defender">
     </div>
     <div id="myModal" class="modal">
@@ -78,7 +78,7 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <i id="porg" class="swg swg-porg-3 swg-5x"></i>
-          <p id="popup">You have defeated all your enermies!</p>
+          <p id="popup">You have defeated all your enermies!Press the button to play again</p>
         </div>
       
       </div>

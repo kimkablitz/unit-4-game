@@ -80,9 +80,14 @@ $(document).ready(function () {
             myAttacker.find("figcaption").find("p").html(currentAttackHealth)
             myDefender.find("figcaption").find("p").html(currentDefenderHealth)
             if (currentDefenderHealth<0){
-                alert("your defender died!");
+                alert("The defender has died!");
                 $(".defender").empty()
                 myArrayAttacker.attackp +=15;}
+            if(currentAttackHealth<0){
+                alert("You have died.Try playing again!")
+                onResetClicked()
+
+            }
             //When win
             if ($(".enermy").children().length ==0 && $(".defender").children().length ==0){
                 var modal = document.getElementById('myModal');

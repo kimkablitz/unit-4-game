@@ -48,9 +48,7 @@ $(document).ready(function () {
     var original = null
     var characterCopy=null
 
-    // function onFigureClick() {
         $(document).on("click", "figure", function () {
-            // console.log('working')
           if ($(this).parent().hasClass("characters")) {
             $(this).addClass("attacker")
             myAttacker = $(this)
@@ -70,11 +68,8 @@ $(document).ready(function () {
            
           }
         })
-    //   }
-    
-    // function onAttackClick() {
+
         $(".buttonA").on("click", function () {
-            // Attack defender
             
             var currentAttackHealth = myAttacker.find("figcaption").find("p").html()
             var currentDefenderHealth = myDefender.find("figcaption").find("p").html()
@@ -111,11 +106,6 @@ $(document).ready(function () {
             }
 
         })
-    // }
-
-
-    // function onResetClicked() {
-
         $(".buttonR").on("click", function () {
             $(".characters").empty()
             $(".defender").empty()
@@ -130,13 +120,9 @@ $(document).ready(function () {
             others = null
              play()
         })
-    // }
 
     var play = function () {
         original = $(".characters").children().clone()
-        // onFigureClick()
-        // onAttackClick()
-        // onResetClicked()
         characterCopy =JSON.parse(JSON.stringify(Characters));
         
     }

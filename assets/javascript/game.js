@@ -18,25 +18,25 @@ $(document).ready(function () {
     var Characters = {
         character1: {
             name: "Obiwan Kanobi",
-            healthp: 150,
+            healthp: 170,
             attackp: 25,
             counterp: 10
         },
         character2: {
             name: "Rey",
-            healthp: 150,
+            healthp: 130,
             attackp: 25,
             counterp: 10
         },
         character3: {
             name: "Yoda",
-            healthp: 150,
+            healthp: 185,
             attackp: 25,
             counterp: 10
         },
         character4: {
             name: "Darth Vader",
-            healthp: 150,
+            healthp: 200,
             attackp: 25,
             counterp: 10
         },
@@ -46,13 +46,15 @@ $(document).ready(function () {
     var myArrayAttacker = null
     var others = null
     var original = null
+    var characterCopy=null
 
-    function onFigureClick() {
-        $("figure").on("click", function () {
+    // function onFigureClick() {
+        $(document).on("click", "figure", function () {
+            // console.log('working')
           if ($(this).parent().hasClass("characters")) {
             $(this).addClass("attacker")
             myAttacker = $(this)
-            myArrayAttacker = Characters[myAttacker.attr("id")]
+            myArrayAttacker = characterCopy[myAttacker.attr("id")]
             $(".mt-5").text("Your character is " + Characters[$(this).attr("id")].name)
             var others = $(".characters").children().not('.attacker');
             $(".enermy").append(others)
@@ -68,26 +70,31 @@ $(document).ready(function () {
            
           }
         })
-      }
+    //   }
     
-    function onAttackClick() {
+    // function onAttackClick() {
         $(".buttonA").on("click", function () {
             // Attack defender
+            
             var currentAttackHealth = myAttacker.find("figcaption").find("p").html()
             var currentDefenderHealth = myDefender.find("figcaption").find("p").html()
             currentDefenderHealth = currentDefenderHealth - myArrayAttacker.attackp
             currentAttackHealth = currentAttackHealth - myArrayDefender.counterp
             myAttacker.find("figcaption").find("p").html(currentAttackHealth)
             myDefender.find("figcaption").find("p").html(currentDefenderHealth)
+            //attacker wins
+            
             if (currentDefenderHealth<0){
-                alert("The defender has died!");
+                alert("The defender has died!")
                 $(".defender").empty()
-                myArrayAttacker.attackp +=15;}
+                myArrayAttacker.attackp +=10
+            } 
+
+            //defender wins
             if(currentAttackHealth<0){
                 alert("You have died.Try playing again!")
-                onResetClicked()
+              }
 
-            }
             //When win
             if ($(".enermy").children().length ==0 && $(".defender").children().length ==0){
                 var modal = document.getElementById('myModal');
@@ -102,29 +109,36 @@ $(document).ready(function () {
                 }
             }
             }
-        })
-    }
 
-    function onResetClicked() {
+        })
+    // }
+
+
+    // function onResetClicked() {
+
         $(".buttonR").on("click", function () {
             $(".characters").empty()
             $(".defender").empty()
             $(".enermy").empty()
             $(".characters").append(original)
+            characterCopy=JSON.parse(JSON.stringify(Characters));
+         
             myAttacker = null
             myDefender = null
             myArrayAttacker = null
             myArrayDefender = null
             others = null
-            play()
+             play()
         })
-    }
+    // }
 
     var play = function () {
         original = $(".characters").children().clone()
-        onFigureClick()
-        onAttackClick()
-        onResetClicked()
+        // onFigureClick()
+        // onAttackClick()
+        // onResetClicked()
+        characterCopy =JSON.parse(JSON.stringify(Characters));
+        
     }
 
     play()
